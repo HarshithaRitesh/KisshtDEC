@@ -7,7 +7,6 @@
         <methods>
           <include name="setUp"/>
           <include name="applyNowButtonTest"/>
-          <include name="headerValueTest"/>
         </methods>
       </class> <!-- com.dec.qa.testdata.UserProfilePageTest -->
     </classes>

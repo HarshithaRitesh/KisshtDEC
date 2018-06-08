@@ -10,21 +10,14 @@ import com.dec.qa.base.TestBase;
 public class UserProfilePage extends TestBase
 {
 
-	@FindBy(xpath="//h4[contains(.,'Connect Your AADHAAR')]")
-	WebElement h4Text;
+    //Initializing PageObjects
 	
-	//Initializing PageObjects
 	public UserProfilePage()
 	{
 		PageFactory.initElements(driver, this);
 	}
 	
 	//Actions
-	public String validateHeaderValue() {
-		return h4Text.getText();
-	}
-	
-	
 	public boolean validateApplyNowButton() {
 	String cardApply=driver.findElement(By.xpath("//div[@class='yourcardtext1' and contains (.,'Not Applied')]")).getText();
 		

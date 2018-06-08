@@ -1,5 +1,6 @@
 package com.dec.qa.testdata;
 
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -31,14 +32,8 @@ public class UserProfilePageTest extends TestBase {
 	new AadhaarDetailsPage();
   }
 
-  @Test(priority=1)
-  public void headerValueTest()
-  {
-	Assert.assertEquals(userProfilePage.validateHeaderValue(), "Connect Your AADHAAR");
-  }
  
-
-  @Test(priority=2)
+  @Test(priority=1)
   public void applyNowButtonTest() {
   boolean flag1=userProfilePage.validateApplyNowButton();
   Assert.assertTrue(flag1);

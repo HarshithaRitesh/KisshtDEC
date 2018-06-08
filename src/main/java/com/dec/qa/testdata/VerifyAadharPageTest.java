@@ -1,5 +1,7 @@
 package com.dec.qa.testdata;
 
-public class VerifyAadharPageTest {
+import com.dec.qa.base.TestBase;
+
+public class VerifyAadharPageTest extends TestBase {
 
 }

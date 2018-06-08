@@ -21,11 +21,20 @@ public class AadhaarDetailsPage extends TestBase {
 	
 	@FindBy(xpath="//div[@id='aadharVerified']//button[contains(text(),'Next')]")
 	WebElement nextButton;
+	
+	@FindBy(xpath="//h4[contains(.,'Connect Your AADHAAR')]")
+	WebElement h4Text;
 
 	public AadhaarDetailsPage() 
 	{
 		PageFactory.initElements(driver, this);
 	}
+	
+	//Actions
+	public String validateHeaderValue() {
+		return h4Text.getText();
+	}
+	
 	
 	public String validatePanFormat(String uPan)
 	{

@@ -2,6 +2,7 @@ package com.dec.qa.pages;
 
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import com.dec.qa.base.TestBase;
 
@@ -21,4 +22,15 @@ WebElement sendOtp;
 
 @FindBy(xpath="//button[contains(.,'Previous')]")
 WebElement previousButton;
+
+//Initializing PageObjects
+public VerifyAadharPage() {
+	PageFactory.initElements(driver, this);
+}
+
+public Boolean validateSendOtpCheck()
+{
+	sendOtp.click();
+	return sendOtp.isEnabled();
+}
 }
