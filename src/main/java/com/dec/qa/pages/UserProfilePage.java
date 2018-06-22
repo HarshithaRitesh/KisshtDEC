@@ -1,8 +1,6 @@
 package com.dec.qa.pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.dec.qa.base.TestBase;
@@ -18,6 +16,7 @@ public class UserProfilePage extends TestBase
 	}
 	
 	//Actions
+	
 	public boolean validateApplyNowButton() {
 	String cardApply=driver.findElement(By.xpath("//div[@class='yourcardtext1' and contains (.,'Not Applied')]")).getText();
 		
@@ -42,4 +41,6 @@ public class UserProfilePage extends TestBase
 		//}
 		
 	}
+	
+	
 }

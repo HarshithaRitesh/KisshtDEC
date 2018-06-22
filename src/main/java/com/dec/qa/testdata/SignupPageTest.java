@@ -30,9 +30,9 @@ public class SignupPageTest extends TestBase {
 	
 	@BeforeTest
 	public void setUp() {
-		initialization();
-	signupPage =new SignUpPage();
-	userProfilePage =new UserProfilePage();
+	initialization();
+signupPage =new SignUpPage();
+userProfilePage =new UserProfilePage();
 
 		}
 	
@@ -57,22 +57,24 @@ public class SignupPageTest extends TestBase {
 	@Test(priority=4)
 	public void loginTest(){
 		
-		userProfilePage = signupPage.login("harshitha.ritesh+bru@kissht.com", "Harshitha", "Ritesh", "kushritesh", "6990079890","888888");
+		userProfilePage = signupPage.login("harshitha.ritesh+dfg@kissht.com", "Harshitha", "Ritesh", "kushritesh", "2990089894","888888");
 	
-				String label=driver.findElement(By.xpath("//div[@class='yourcardtext1']")).getTagName();
-				System.out.println(label);
+				/*String label=driver.findElement(By.xpath("//div[@class='yourcardtext1']")).getTagName();
+				System.out.println(label);*/
 	}
 	
+	/*@AfterTest()
+	public void signOut() {
+			signupPage.logOut();
+		}*/
+}
 	
 
 		
-	
+
 		
 		
-	@AfterTest
-public void tearDown() {
-		//driver.quit();
-	}
 	
 	
-}
+	
+

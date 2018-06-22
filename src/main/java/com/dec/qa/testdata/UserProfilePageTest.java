@@ -1,21 +1,19 @@
 package com.dec.qa.testdata;
 
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.dec.qa.base.TestBase;
-import com.dec.qa.pages.AadhaarDetailsPage;
-import com.dec.qa.pages.SignUpPage;
+import com.dec.qa.pages.LoginPage;
+
 import com.dec.qa.pages.UserProfilePage;
 
 import junit.framework.Assert;
 
 public class UserProfilePageTest extends TestBase {
 	
-	SignUpPage signUpPage;
-	UserProfilePage userProfilePage;
-	AadhaarDetailsPage aadhaarDetailsPage;
+	LoginPage loginPage;
+    UserProfilePage userProfilePage;
 
 	//create constructor of UserProfilePageTest Class
 	
@@ -27,15 +25,17 @@ public class UserProfilePageTest extends TestBase {
   @BeforeTest
     public void setUp() {
 	initialization();
-	new SignUpPage();
-	new UserProfilePage();
-	new AadhaarDetailsPage();
+	
+ userProfilePage=loginPage.signIn(prop.getProperty("username"),prop.getProperty("password"));
+
   }
 
- 
-  @Test(priority=1)
+  @Test(priority=2)
   public void applyNowButtonTest() {
   boolean flag1=userProfilePage.validateApplyNowButton();
   Assert.assertTrue(flag1);
 }
+ 
+	  
+  
 }

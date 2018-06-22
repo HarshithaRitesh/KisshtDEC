@@ -18,7 +18,7 @@ public class SignUpPage extends TestBase {
 		WebElement email;
 		
 		@FindBy(xpath="//input[@name='first_name']")
-		WebElement fName;
+        WebElement fName;
 		
 		@FindBy(xpath="//input[@name='last_name']")
 		WebElement lName;
@@ -78,6 +78,13 @@ public class SignUpPage extends TestBase {
 			registerBtn.submit();
 	       return new UserProfilePage();
 		}
+		
+		public void logOut()
+		{
+			driver.close();
+		}
+
+		
 		
 	
 		}

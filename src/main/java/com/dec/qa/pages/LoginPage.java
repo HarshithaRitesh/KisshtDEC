@@ -1,40 +1,29 @@
 package com.dec.qa.pages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import com.dec.qa.base.TestBase;
 
-public class LoginPage extends TestBase{
+
+public class LoginPage extends TestBase
+{
 
 	//PageFactory - OR Need to define PF or OR of Login Page
-	@FindBy(name="email")
-	WebElement email;
+
 	
-	@FindBy(name="first_name")
-	WebElement fName;
+	@FindBy(xpath="//a[@id='ui-id-2']") //a[@id='ui-id-2'] /* //div[@id='tab']//a[@id='ui-id-2']*/
+	WebElement signIn;
 	
-	@FindBy(name="last_name")
-	WebElement lName;
+	@FindBy(xpath="//form[@id='login-form']//input[@name='email_mobile']")
+	WebElement lUsername;
 	
-	@FindBy(name="password")
-	WebElement passWord;
+	@FindBy(xpath="//form[@id='login-form']//input[@type='password']")
+	WebElement lPassword;
 	
-	@FindBy(name="mobile_number")
-	WebElement mobileNum;
-	
-	@FindBy(name="otp")
-	WebElement otpNum;
-	
-	@FindBy(tagName="Button")
-	WebElement sendOtp;
-	
-	@FindBy(className="t400 capitalize button button-border button-circle nomargin registratinbtn")
-	WebElement registerBtn;
-	
-	@FindBy(xpath="//img[contains(text(),'kissht')]")
-	WebElement kisshtLogo;
+	@FindBy(xpath="//form[@id='login-form']//button[contains(text(),'Sign In')]")  /* other xpath =//form[@id='login-form']//button['Sign In'] */
+	WebElement signInButton;            
 	
 	//Initializing PageObjects
 	public LoginPage() {
@@ -43,13 +32,19 @@ public class LoginPage extends TestBase{
 	
 	//Actions
 	
-	public String validateLoginPageTitle() {
-		return driver.getTitle();
+	public Boolean validateSignInLink() throws InterruptedException {
+		
+		Thread.sleep(1000);
+		signIn.click();
+		return signIn.isEnabled();
 	}
 	
 	
-	public boolean validateDECLogo() {
-		return kisshtLogo.isDisplayed();
+	public UserProfilePage signIn(String uName,String uPassword) {
+		lUsername.sendKeys(uName);
+		lPassword.sendKeys(uPassword);
+		signInButton.click();
+		return new UserProfilePage();
 	}
 	
 

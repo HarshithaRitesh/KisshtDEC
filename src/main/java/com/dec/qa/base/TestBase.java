@@ -58,7 +58,7 @@ public static void  initialization()
 	driver.manage().deleteAllCookies();
 	driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
 	driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-	driver.get(prop.getProperty("url"));
+driver.get(prop.getProperty("url"));
 	
 }
 }
