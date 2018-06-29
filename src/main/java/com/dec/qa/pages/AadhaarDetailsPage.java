@@ -17,7 +17,7 @@ public class AadhaarDetailsPage extends TestBase {
 	@FindBy(xpath="//input[@type='text' and @name='aadhar_no']")
     WebElement aadhaar;
 	
-	@FindBy(xpath="//div[@id='aadharVerified']//button[contains(text(),'Next')]")
+	@FindBy(xpath="//div[@class='stepmainbx']//div[1]//button[contains(text(),'Next')] ")  //div[@id='aadharVerified']//button[contains(text(),'NEXT')]
 	WebElement nextButton;
 	
 	@FindBy(xpath="//h4[contains(.,'Connect Your AADHAAR')]")

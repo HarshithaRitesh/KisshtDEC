@@ -19,9 +19,6 @@ public class SignupPageTest extends TestBase {
 
 	SignUpPage signupPage;
 	UserProfilePage userProfilePage;
-	
-
-	
 	//create constructor of SignupPageTest Class
 	
 	public SignupPageTest(){
@@ -57,7 +54,7 @@ userProfilePage =new UserProfilePage();
 	@Test(priority=4)
 	public void loginTest(){
 		
-		userProfilePage = signupPage.login("harshitha.ritesh+dfg@kissht.com", "Harshitha", "Ritesh", "kushritesh", "2990089894","888888");
+    userProfilePage = signupPage.login("harshitha.ritesh+mavenproject@kissht.com", "Harshitha", "Ritesh", "kushritesh", "2890089894","888888");
 	
 				/*String label=driver.findElement(By.xpath("//div[@class='yourcardtext1']")).getTagName();
 				System.out.println(label);*/

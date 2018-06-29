@@ -41,10 +41,12 @@ public class LoginPage extends TestBase
 	
 	
 	public UserProfilePage signIn(String uName,String uPassword) {
+		
 		lUsername.sendKeys(uName);
 		lPassword.sendKeys(uPassword);
 		signInButton.click();
 		return new UserProfilePage();
+	
 	}
 	
 

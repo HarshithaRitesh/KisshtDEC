@@ -1,17 +1,19 @@
 package com.dec.qa.testdata;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import com.dec.qa.base.TestBase;
 import com.dec.qa.pages.AadhaarDetailsPage;
-import com.dec.qa.pages.SignUpPage;
+import com.dec.qa.pages.LoginPage;
 import com.dec.qa.pages.UserProfilePage;
 
-import junit.framework.Assert;
+
 
 public class AadhaarDetailsPageTest extends TestBase{
-	SignUpPage signupPage;
+	LoginPage loginPage;
 	UserProfilePage userProfilePage;
 	AadhaarDetailsPage aadhaarDetailsPage;
 	
@@ -20,18 +22,21 @@ public class AadhaarDetailsPageTest extends TestBase{
 		super();
 	}
 	
-	@BeforeMethod
-	public void setUp(){
+	@BeforeTest
+	public void setUp() throws InterruptedException{
 		initialization();
-		signupPage =new SignUpPage();
+		LoginPage loginPage=new LoginPage();
+		  loginPage.validateSignInLink();
 		new UserProfilePage();
+		userProfilePage=loginPage.signIn(prop.getProperty("username"),prop.getProperty("password"));
+		userProfilePage.validateApplyNowButton();
 		aadhaarDetailsPage=new AadhaarDetailsPage();
 	}
 
 	 @Test(priority=1)
 	  public void headerValueTest()
 	  {
-		Assert.assertEquals(aadhaarDetailsPage.validateHeaderValue(), "Connect Your AADHAAR");
+		Assert.assertEquals(aadhaarDetailsPage.validateHeaderValue(), "CONNECT YOUR AADHAAR");
 	  }
 	@Test(priority=2)
 	public void panFormatTest() {

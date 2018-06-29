@@ -21,14 +21,15 @@ public class LoginPageTest extends TestBase {
 	@BeforeTest
 	public void setUp() {
 		initialization();
-		new LoginPage();
-		new UserProfilePage();
+	
+		//userProfilePage=loginPage.signIn(prop.getProperty("username"),prop.getProperty("password"));
 	}
 	
 	@Test
 	public void signInLinkCheck() throws InterruptedException {
 		System.out.println("link found");
 		System.out.println("driver=" + driver); 
+		LoginPage loginPage=new LoginPage();
 		Boolean flag=loginPage.validateSignInLink();
 	Assert.assertTrue(flag);
 	
@@ -36,6 +37,8 @@ public class LoginPageTest extends TestBase {
 	
 	@Test
 	public void signInTest() {
+		LoginPage loginPage=new LoginPage();
+		UserProfilePage userProfilePage=new UserProfilePage();
 		userProfilePage=loginPage.signIn(prop.getProperty("username"), prop.getProperty("password"));
 	}
 }

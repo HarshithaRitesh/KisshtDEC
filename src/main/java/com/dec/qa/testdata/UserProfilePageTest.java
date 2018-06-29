@@ -1,5 +1,6 @@
 package com.dec.qa.testdata;
 
+import org.testng.Assert;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
@@ -8,7 +9,7 @@ import com.dec.qa.pages.LoginPage;
 
 import com.dec.qa.pages.UserProfilePage;
 
-import junit.framework.Assert;
+
 
 public class UserProfilePageTest extends TestBase {
 	
@@ -24,16 +25,19 @@ public class UserProfilePageTest extends TestBase {
 	
   @BeforeTest
     public void setUp() {
-	initialization();
-	
- userProfilePage=loginPage.signIn(prop.getProperty("username"),prop.getProperty("password"));
-
-  }
+    initialization();
+  
+   }
 
   @Test(priority=2)
-  public void applyNowButtonTest() {
+  public void applyNowButtonTest() throws InterruptedException {
+  LoginPage loginPage=new LoginPage();
+	  loginPage.validateSignInLink();
+	 userProfilePage=loginPage.signIn(prop.getProperty("username"),prop.getProperty("password"));
   boolean flag1=userProfilePage.validateApplyNowButton();
-  Assert.assertTrue(flag1);
+ Assert.assertTrue(flag1);
+  
+  
 }
  
 	  
