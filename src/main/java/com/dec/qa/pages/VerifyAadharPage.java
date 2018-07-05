@@ -42,6 +42,7 @@ public VerifyAadharPage() {
 public Boolean validateSendOtp()
 {
 	Boolean otpHit=sendOtp.isEnabled();
+	skipBtn.click();
 	Boolean skipClick=skipBtn.isEnabled();
 	
     if(otpHit==true)

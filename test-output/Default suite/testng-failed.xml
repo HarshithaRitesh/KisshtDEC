@@ -3,12 +3,13 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.dec.qa.testdata.VerifyAadharPageTest">
+      <class name="com.dec.qa.testdata.CalculateEstimateDecTest">
         <methods>
+          <include name="cityListDropDownCheck"/>
           <include name="setUp"/>
-          <include name="sendOtpCheck"/>
+          <include name="employeeTypeCheck"/>
         </methods>
-      </class> <!-- com.dec.qa.testdata.VerifyAadharPageTest -->
+      </class> <!-- com.dec.qa.testdata.CalculateEstimateDecTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

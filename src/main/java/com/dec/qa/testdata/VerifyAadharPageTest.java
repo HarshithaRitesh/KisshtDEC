@@ -34,6 +34,8 @@ public class VerifyAadharPageTest extends TestBase {
 		aadhaarDetailsPage.validatePanFormat("QWEPO8888J");
 		aadhaarDetailsPage.validateAadhaarFormat("127654890987");
 		aadhaarDetailsPage.validateNextButton();
+		VerifyAadharPage verifyAadharPage =new VerifyAadharPage();
+		
 	}
 	
 	@Test
